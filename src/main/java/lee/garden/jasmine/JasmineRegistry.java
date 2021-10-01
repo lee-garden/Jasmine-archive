@@ -23,6 +23,10 @@ public class JasmineRegistry {
         return new JasmineRegistry();
     }
 
+    public List<Pair<Class<?>, Class<?>>> getEntities() {
+        return entities;
+    }
+
     private JasmineRegistry() {
     }
 }
