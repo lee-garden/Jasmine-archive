@@ -11,9 +11,9 @@ public class JasmineRegistry {
 
     private static final Logger logger = LoggerFactory.getLogger(JasmineRegistry.class.getName());
 
-    private final List<Pair<Object, Object>> entities = new ArrayList<>();
+    private final List<Pair<Class<?>, Class<?>>> entities = new ArrayList<>();
 
-    public void registerEntity(Object entityClazz, Object repositoryClazz) {
+    public void registerEntity(Class<?> entityClazz, Class<?> repositoryClazz) {
         // TODO: check entity and repository type or annotation
         entities.add(Pair.of(entityClazz, repositoryClazz));
         logger.info("Jasmine registers entity : " + entityClazz);
