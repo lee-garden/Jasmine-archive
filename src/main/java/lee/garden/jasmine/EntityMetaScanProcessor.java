@@ -27,7 +27,7 @@ public class EntityMetaScanProcessor {
             Class<?> repositoryClazz = entityPair.getSecond();
 
             // TODO : entity processing and save as JasminEntityMeta
-            entityMetaStore.addEntityMeta(new JasminEntityMeta());
+            entityMetaStore.addEntityMeta(JasminEntityMeta.of(entityClazz, repositoryClazz));
         });
     }
 
