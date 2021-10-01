@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class JasminEntityMetaTest {
+class JasmineEntityMetaTest {
 
     @Test
     public void setEntityMetaTest() {
-        JasminEntityMeta actual = JasminEntityMeta.of(TestEntity.class, TestRepository.class);
+        JasmineEntityMeta actual = JasmineEntityMeta.of(TestEntity.class, TestRepository.class);
 
         assertEquals(actual.getEntityName(), "TestEntity");
         assertEquals(actual.getEntityClazz(), TestEntity.class);

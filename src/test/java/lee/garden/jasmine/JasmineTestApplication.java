@@ -3,7 +3,7 @@ package lee.garden.jasmine;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.test.context.ContextConfiguration;
 
-@ContextConfiguration(classes = {JasminTestConfig.class})
+@ContextConfiguration(classes = {JasmineTestConfig.class})
 @SpringBootApplication
-public class JasminTestApplication {
+public class JasmineTestApplication {
 }

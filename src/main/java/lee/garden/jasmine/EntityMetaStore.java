@@ -1,15 +1,15 @@
 package lee.garden.jasmine;
 
-import lee.garden.jasmine.metadata.JasminData;
-import lee.garden.jasmine.metadata.JasminEntityMeta;
+import lee.garden.jasmine.metadata.JasmineData;
+import lee.garden.jasmine.metadata.JasmineEntityMeta;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EntityMetaStore {
 
-    private JasminData jasminData = new JasminData();
+    private JasmineData jasminData = new JasmineData();
 
-    public void addEntityMeta(JasminEntityMeta entityMeta) {
+    public void addEntityMeta(JasmineEntityMeta entityMeta) {
         jasminData.getJasminEntityMetaList().add(entityMeta);
     }
 
