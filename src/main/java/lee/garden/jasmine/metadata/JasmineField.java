@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class JasmineField {
-    private List<JasminAnnotation> annotations = List.of();
+    private List<JasmineAnnotation> annotations = List.of();
     private String name;
     private Class<?> type;
 
@@ -14,7 +14,7 @@ public class JasmineField {
         JasmineField jasmineField = new JasmineField();
         jasmineField.name = field.getName();
         jasmineField.type = field.getType();
-        jasmineField.annotations = Arrays.stream(field.getAnnotations()).map(JasminAnnotation::from).collect(Collectors.toList());
+        jasmineField.annotations = Arrays.stream(field.getAnnotations()).map(JasmineAnnotation::from).collect(Collectors.toList());
         return jasmineField;
     }
 
@@ -26,7 +26,7 @@ public class JasmineField {
         return type;
     }
 
-    public List<JasminAnnotation> getAnnotations() {
+    public List<JasmineAnnotation> getAnnotations() {
         return annotations;
     }
 
