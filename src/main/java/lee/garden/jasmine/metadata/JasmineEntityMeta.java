@@ -11,15 +11,12 @@ public class JasmineEntityMeta {
     private Class<?> repositoryClazz;
     private List<JasmineField> fields;
 
-    private JasmineEntityMeta() {
-    }
-
     public static JasmineEntityMeta of(Class<?> entityClazz, Class<?> repositoryClazz) {
         JasmineEntityMeta jasmineEntityMeta = new JasmineEntityMeta();
         jasmineEntityMeta.entityName = entityClazz.getSimpleName();
         jasmineEntityMeta.entityClazz = entityClazz;
         jasmineEntityMeta.repositoryClazz = repositoryClazz;
-        jasmineEntityMeta.fields = Arrays.stream(entityClazz.getDeclaredFields()).map(field -> JasmineField.of(field.getName(), field.getType())).collect(Collectors.toList());
+        jasmineEntityMeta.fields = Arrays.stream(entityClazz.getDeclaredFields()).map(JasmineField::from).collect(Collectors.toList());
         return jasmineEntityMeta;
     }
 
@@ -38,4 +35,6 @@ public class JasmineEntityMeta {
     public List<JasmineField> getFields() {
         return fields;
     }
+
+    private JasmineEntityMeta() {}
 }
