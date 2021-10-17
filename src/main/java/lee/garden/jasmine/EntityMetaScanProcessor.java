@@ -1,6 +1,7 @@
 package lee.garden.jasmine;
 
 import lee.garden.jasmine.metadata.MetaFactory;
+import lee.garden.jasmine.repository.JasmineRepository;
 import lee.garden.jasmine.repository.RepositoryFactory;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
@@ -38,7 +39,8 @@ public class EntityMetaScanProcessor {
             Class<?> repositoryClazz = entityPair.getSecond();
 
             // TODO : entity processing and save as JasminEntityMeta
-            entityMetaStore.addEntityMeta(metaFactory.createEntityMeta(entityClazz, repositoryClazz));
+            JasmineRepository repository = repositoryFactory.createRepository(entityClazz, repositoryClazz);
+            entityMetaStore.addEntityMeta(metaFactory.createEntityMeta(entityClazz, repository));
         });
     }
 

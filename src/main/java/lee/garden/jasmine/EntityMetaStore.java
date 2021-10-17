@@ -13,4 +13,7 @@ public class EntityMetaStore {
         jasminData.getJasminEntityMetaList().add(entityMeta);
     }
 
+    public JasmineData getJasminData() {
+        return jasminData;
+    }
 }

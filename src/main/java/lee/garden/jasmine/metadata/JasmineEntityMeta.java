@@ -1,5 +1,7 @@
 package lee.garden.jasmine.metadata;
 
+import lee.garden.jasmine.repository.JasmineRepository;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,8 +10,8 @@ public class JasmineEntityMeta {
 
     private String entityName;
     private Class<?> entityClazz;
-    private Class<?> repositoryClazz;
     private List<JasmineField> fields;
+    private JasmineRepository jasmineRepository;
 
     public String getEntityName() {
         return entityName;
@@ -19,9 +21,7 @@ public class JasmineEntityMeta {
         return entityClazz;
     }
 
-    public Class<?> getRepositoryClazz() {
-        return repositoryClazz;
-    }
+    public JasmineRepository getRepository() { return jasmineRepository; }
 
     public List<JasmineField> getFields() {
         return fields;
@@ -29,11 +29,11 @@ public class JasmineEntityMeta {
 
     private JasmineEntityMeta() {}
 
-    public static JasmineEntityMeta of(Class<?> entityClazz, Class<?> repositoryClazz) {
+    public static JasmineEntityMeta of(Class<?> entityClazz, JasmineRepository repository) {
         JasmineEntityMeta jasmineEntityMeta = new JasmineEntityMeta();
         jasmineEntityMeta.entityName = entityClazz.getSimpleName();
         jasmineEntityMeta.entityClazz = entityClazz;
-        jasmineEntityMeta.repositoryClazz = repositoryClazz;
+        jasmineEntityMeta.jasmineRepository = repository;
         jasmineEntityMeta.fields = Arrays.stream(entityClazz.getDeclaredFields()).map(JasmineField::from).collect(Collectors.toList());
         return jasmineEntityMeta;
     }
