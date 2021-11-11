@@ -1,4 +1,4 @@
-package lee.garden.jasmine;
+package lee.garden.jasmine.core;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

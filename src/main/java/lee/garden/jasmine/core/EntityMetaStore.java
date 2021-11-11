@@ -1,4 +1,4 @@
-package lee.garden.jasmine;
+package lee.garden.jasmine.core;
 
 import lee.garden.jasmine.metadata.JasmineData;
 import lee.garden.jasmine.metadata.JasmineEntityMeta;

@@ -1,10 +1,9 @@
 package lee.garden.jasmine.service;
 
-import lee.garden.jasmine.EntityMetaStore;
+import lee.garden.jasmine.core.EntityMetaStore;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Transactional
 @Service

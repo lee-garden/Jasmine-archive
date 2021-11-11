@@ -1,5 +1,6 @@
 package lee.garden.jasmine;
 
+import lee.garden.jasmine.core.JasmineRegistry;
 import lee.garden.jasmine.testdata.TestEntity;
 import lee.garden.jasmine.testdata.TestRepository;
 import org.junit.jupiter.api.Test;

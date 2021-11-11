@@ -1,2 +1,2 @@
 # Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=lee.garden.jasmine.JasmineBeanScanner
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=lee.garden.jasmine.core.JasmineBeanScanner

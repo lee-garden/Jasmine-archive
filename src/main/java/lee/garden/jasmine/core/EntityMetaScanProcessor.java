@@ -1,4 +1,4 @@
-package lee.garden.jasmine;
+package lee.garden.jasmine.core;
 
 import lee.garden.jasmine.metadata.MetaFactory;
 import lee.garden.jasmine.repository.JasmineRepository;
