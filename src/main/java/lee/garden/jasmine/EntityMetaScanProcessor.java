@@ -3,6 +3,8 @@ package lee.garden.jasmine;
 import lee.garden.jasmine.metadata.MetaFactory;
 import lee.garden.jasmine.repository.JasmineRepository;
 import lee.garden.jasmine.repository.RepositoryFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Component
 public class EntityMetaScanProcessor {
+
+    private static final Logger logger = LoggerFactory.getLogger(EntityMetaScanProcessor.class.getName());
 
     private final JasmineRegistry jasmineRegistry;
     private final EntityMetaStore entityMetaStore;
@@ -41,6 +45,7 @@ public class EntityMetaScanProcessor {
             // TODO : entity processing and save as JasminEntityMeta
             JasmineRepository repository = repositoryFactory.createRepository(entityClazz, repositoryClazz);
             entityMetaStore.addEntityMeta(metaFactory.createEntityMeta(entityClazz, repository));
+            logger.info(entityClazz.getSimpleName() + " entity processing");
         });
     }
 
